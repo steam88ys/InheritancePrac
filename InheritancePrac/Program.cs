@@ -16,8 +16,28 @@ namespace InheritancePrac
             {
                 item.Eat();
                 item.Sleep();
-                ((Dog)item).Bark();
-                ((Cat)item).Meow();
+
+                // as 방식
+                Dog dog = item as Dog;
+                if(dog != null)
+                {
+                    dog.Bark();
+                }
+                Cat cat = item as Cat;
+                if (cat != null)
+                {
+                    cat.Meow();
+                }
+
+                // is 방식
+                if (item is Dog)
+                {
+                    ((Dog)item).Bark();
+                }else if(item is Cat)
+                {
+                    ((Cat)item).Meow();
+                }
+
             }
         }
     }
